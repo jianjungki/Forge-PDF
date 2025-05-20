@@ -1,6 +1,6 @@
 # PDF Processing System
 
-[English](./README.md) | [中文](./README-zh.md处理系统)
+[English](./README.md) | [中文](./README-zh.md)
 
 A comprehensive PDF processing backend system offering various PDF manipulation features, supporting Docker deployment.
 
