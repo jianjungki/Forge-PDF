@@ -1,0 +1,194 @@
+version: '3.8'
+
+services:
+  # API Gateway
+  api-gateway:
+    build:
+      context: ../services/api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    depends_on:
+      - upload-service
+      - viewer-page-service
+      - security-service
+      - rabbitmq
+    networks:
+      - pdf-network
+
+  # 核心服务
+  upload-service:
+    build:
+      context: ../services/upload-service
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      - PORT=8001
+    depends_on:
+      - mongodb
+      - minio
+      - rabbitmq
+    networks:
+      - pdf-network
+
+  viewer-page-service:
+    build:
+      context: ../services/viewer-page-service
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8002"
+    environment:
+      - PORT=8002
+    depends_on:
+      - mongodb
+      - minio
+    networks:
+      - pdf-network
+
+  security-service:
+    build:
+      context: ../services/security-service
+      dockerfile: Dockerfile
+    ports:
+      - "8004:8004"
+    environment:
+      - PORT=8004
+    depends_on:
+      - mongodb
+      - minio
+      - rabbitmq
+    networks:
+      - pdf-network
+
+  # 处理服务
+  ocr-service:
+    build:
+      context: ../services/ocr-service
+      dockerfile: Dockerfile
+    ports:
+      - "8005:8005"
+    environment:
+      - PORT=8005
+    depends_on:
+      - mongodb
+      - minio
+      - rabbitmq
+    networks:
+      - pdf-network
+
+  processing-service:
+    build:
+      context: ../services/processing-service
+      dockerfile: Dockerfile
+    ports:
+      - "8006:8006"
+    environment:
+      - PORT=8006
+    depends_on:
+      - mongodb
+      - minio
+      - rabbitmq
+    networks:
+      - pdf-network
+
+  transform-service:
+    build:
+      context: ../services/transform-service
+      dockerfile: Dockerfile
+    ports:
+      - "8007:8007"
+    environment:
+      - PORT=8007
+    depends_on:
+      - mongodb
+      - minio
+      - rabbitmq
+      - redis
+    networks:
+      - pdf-network
+
+  # 基础设施服务
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - pdf-network
+
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=minio123
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    networks:
+      - pdf-network
+
+  rabbitmq:
+    image: rabbitmq:3.11-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - pdf-network
+
+  redis:
+    image: redis:7.0
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - pdf-network
+
+  # 监控服务
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    networks:
+      - pdf-network
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    networks:
+      - pdf-network
+
+volumes:
+  mongodb_data:
+  minio_data:
+  rabbitmq_data:
+  redis_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  pdf-network:
+    driver: bridge

@@ -1,0 +1,58 @@
+{
+    "errors": {
+        "file_not_found": "文件 {file_id} 不存在",
+        "invalid_operation": "不支持的操作: {operation}",
+        "operation_not_found": "操作 {operation_id} 不存在",
+        "operation_incomplete": "操作尚未完成，当前状态: {status}",
+        "result_not_found": "处理结果不存在",
+        "password_required": {
+            "encrypt": "加密PDF需要提供密码",
+            "decrypt": "解密PDF需要提供密码",
+            "permissions": "设置权限需要提供密码"
+        },
+        "password_incorrect": "密码错误",
+        "watermark": {
+            "text_required": "添加水印需要提供文本",
+            "text_too_long": "水印文本长度不能超过{max_length}个字符"
+        },
+        "redact": {
+            "text_required": "涂黑需要提供要涂黑的文本"
+        }
+    },
+    "success": {
+        "encrypt": "PDF加密成功",
+        "decrypt": "PDF解密成功",
+        "watermark": "水印添加成功",
+        "permissions": "PDF权限设置成功",
+        "sanitize": "PDF清理成功",
+        "redact": "PDF涂黑成功"
+    },
+    "status": {
+        "healthy": "健康",
+        "error": "错误",
+        "processing": "处理中",
+        "completed": "已完成"
+    },
+    "operations": {
+        "encrypt": "加密",
+        "decrypt": "解密",
+        "watermark": "添加水印",
+        "permissions": "设置权限",
+        "sanitize": "清理",
+        "redact": "涂黑文本"
+    },
+    "logging": {
+        "startup": "安全服务启动",
+        "shutdown": "安全服务关闭",
+        "minio_init_error": "MinIO初始化错误: {error}",
+        "rabbitmq_init_error": "RabbitMQ连接错误: {error}",
+        "bucket_created": "创建了'pdf-security' bucket",
+        "rabbitmq_connected": "RabbitMQ连接已建立",
+        "file_content_error": "获取文件内容时出错: {error}",
+        "save_file_error": "保存处理后的文件时出错: {error}",
+        "process_error": "处理PDF时出错: {error}",
+        "request_error": "处理安全操作请求时出错: {error}",
+        "status_error": "获取操作状态时出错: {error}",
+        "download_error": "下载处理结果时出错: {error}"
+    }
+}

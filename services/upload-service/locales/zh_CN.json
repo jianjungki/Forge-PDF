@@ -1,0 +1,40 @@
+{
+  "upload": {
+    "success": "文件上传成功",
+    "error": {
+      "file_too_large": "文件大小超过限制",
+      "unsupported_type": "不支持的文件类型: {mime_type}",
+      "storage_error": "存储文件时出错: {error}",
+      "general_error": "上传文件时出错: {error}"
+    }
+  },
+  "file": {
+    "not_found": "文件 {file_id} 不存在",
+    "status": {
+      "uploaded": "已上传",
+      "processing": "处理中",
+      "completed": "已完成",
+      "error": "错误"
+    }
+  },
+  "auth": {
+    "unauthorized": "未授权",
+    "forbidden": "没有权限访问此资源"
+  },
+  "validation": {
+    "required_file": "请选择要上传的文件",
+    "invalid_file_id": "无效的文件ID"
+  },
+  "service": {
+    "startup": "上传服务启动",
+    "shutdown": "上传服务关闭",
+    "minio": {
+      "init_error": "MinIO初始化错误: {error}",
+      "bucket_created": "创建了'pdf-uploads' bucket"
+    },
+    "rabbitmq": {
+      "connection_error": "RabbitMQ连接错误: {error}",
+      "connected": "RabbitMQ连接已建立"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "security": {
+    "encryption": {
+      "success": "PDF encrypted successfully",
+      "error": "Failed to encrypt PDF: {error}",
+      "invalid_password": "Invalid password"
+    },
+    "decryption": {
+      "success": "PDF decrypted successfully",
+      "error": "Failed to decrypt PDF: {error}",
+      "wrong_password": "Wrong password"
+    },
+    "watermark": {
+      "add_success": "Watermark added successfully",
+      "add_error": "Failed to add watermark: {error}",
+      "remove_success": "Watermark removed successfully",
+      "remove_error": "Failed to remove watermark: {error}",
+      "invalid_text": "Invalid watermark text"
+    },
+    "permissions": {
+      "set_success": "PDF permissions set successfully",
+      "set_error": "Failed to set PDF permissions: {error}",
+      "invalid_permission": "Invalid permission settings"
+    },
+    "signing": {
+      "success": "PDF signed successfully",
+      "error": "Failed to sign PDF: {error}",
+      "verify_success": "PDF signature verified successfully",
+      "verify_error": "PDF signature verification failed: {error}",
+      "invalid_signature": "Invalid signature"
+    },
+    "sanitize": {
+      "success": "PDF sanitized successfully",
+      "error": "Failed to sanitize PDF: {error}"
+    },
+    "redact": {
+      "success": "PDF content redacted successfully",
+      "error": "Failed to redact PDF content: {error}"
+    }
+  },
+  "file": {
+    "not_found": "File {file_id} not found",
+    "status": {
+      "encrypted": "Encrypted",
+      "decrypted": "Decrypted",
+      "watermarked": "Watermarked",
+      "sanitized": "Sanitized",
+      "signed": "Signed",
+      "redacted": "Redacted",
+      "error": "Error"
+    }
+  },
+  "auth": {
+    "unauthorized": "Unauthorized",
+    "forbidden": "Access to this resource is forbidden"
+  },
+  "validation": {
+    "required_file": "Please select a file to process",
+    "invalid_file_id": "Invalid file ID",
+    "invalid_options": "Invalid option settings"
+  },
+  "service": {
+    "startup": "Security service started",
+    "shutdown": "Security service stopped"
+  }
+}

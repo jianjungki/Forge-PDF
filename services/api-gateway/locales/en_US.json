@@ -1,0 +1,37 @@
+{
+  "welcome": "Welcome to PDF Processing System",
+  "error": {
+    "service_not_found": "Service {service} not found",
+    "service_unavailable": "Service {service} is unavailable",
+    "invalid_credentials": "Invalid username or password",
+    "invalid_token": "Could not validate credentials",
+    "user_disabled": "User is disabled",
+    "forbidden": "Not authorized to access this resource",
+    "not_found": "Resource not found",
+    "internal_error": "Internal server error"
+  },
+  "user": {
+    "login_success": "Login successful",
+    "logout_success": "Logout successful"
+  },
+  "pdf": {
+    "upload_success": "PDF uploaded successfully",
+    "processing": "PDF is being processed",
+    "processing_complete": "PDF processing complete",
+    "download_ready": "PDF is ready for download"
+  },
+  "operations": {
+    "merge": "Merge PDFs",
+    "split": "Split PDF",
+    "rotate": "Rotate PDF",
+    "compress": "Compress PDF",
+    "convert": "Convert PDF",
+    "encrypt": "Encrypt PDF",
+    "decrypt": "Decrypt PDF",
+    "watermark": "Add Watermark",
+    "remove_watermark": "Remove Watermark",
+    "ocr": "OCR Text Recognition",
+    "extract_images": "Extract Images",
+    "repair": "Repair PDF"
+  }
+}

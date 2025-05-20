@@ -1,0 +1,40 @@
+{
+  "upload": {
+    "success": "File uploaded successfully",
+    "error": {
+      "file_too_large": "File size exceeds limit",
+      "unsupported_type": "Unsupported file type: {mime_type}",
+      "storage_error": "Error storing file: {error}",
+      "general_error": "Error uploading file: {error}"
+    }
+  },
+  "file": {
+    "not_found": "File {file_id} not found",
+    "status": {
+      "uploaded": "Uploaded",
+      "processing": "Processing",
+      "completed": "Completed",
+      "error": "Error"
+    }
+  },
+  "auth": {
+    "unauthorized": "Unauthorized",
+    "forbidden": "Access to this resource is forbidden"
+  },
+  "validation": {
+    "required_file": "Please select a file to upload",
+    "invalid_file_id": "Invalid file ID"
+  },
+  "service": {
+    "startup": "Upload service started",
+    "shutdown": "Upload service stopped",
+    "minio": {
+      "init_error": "MinIO initialization error: {error}",
+      "bucket_created": "Created 'pdf-uploads' bucket"
+    },
+    "rabbitmq": {
+      "connection_error": "RabbitMQ connection error: {error}",
+      "connected": "RabbitMQ connection established"
+    }
+  }
+}

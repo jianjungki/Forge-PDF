@@ -1,0 +1,93 @@
+{
+    "ocr": {
+        "success": "OCR识别成功",
+        "error": "OCR识别失败: {error}",
+        "processing": "文档处理中",
+        "extract_text": "文本提取成功",
+        "language_detection": "检测到语言: {language}",
+        "confidence": "识别置信度: {confidence}%",
+        "pages_processed": "已处理页面 {processed}/{total}",
+        "preprocessing": "图像预处理中",
+        "quality": {
+            "low": "低质量(速度优先)",
+            "medium": "中等质量(平衡)",
+            "high": "高质量(精度优先)"
+        }
+    },
+    "errors": {
+        "file_not_found": "文件 {file_id} 不存在",
+        "invalid_file_type": "不支持的文件类型: {file_type}",
+        "operation_not_found": "操作 {operation_id} 不存在",
+        "operation_incomplete": "操作尚未完成，当前状态: {status}",
+        "result_not_found": "处理结果不存在",
+        "language_not_supported": "不支持的语言: {language}",
+        "tesseract_error": "Tesseract错误: {error}",
+        "timeout": "OCR处理超时",
+        "image_too_large": "图像过大，无法处理",
+        "too_many_pages": "页面数量过多，请分批处理",
+        "invalid_dpi": "无效的DPI值: {dpi}"
+    },
+    "validation": {
+        "languages_required": "请指定至少一种识别语言",
+        "invalid_language": "无效的语言代码: {language}",
+        "invalid_page_range": "无效的页面范围: {range}",
+        "invalid_quality": "无效的质量设置: {quality}"
+    },
+    "operations": {
+        "ocr": "文字识别",
+        "extract_text": "提取文本",
+        "detect_language": "检测语言",
+        "preprocess": "预处理图像"
+    },
+    "formats": {
+        "text": "纯文本",
+        "json": "JSON",
+        "pdf": "PDF",
+        "searchable_pdf": "可搜索PDF",
+        "hocr": "hOCR"
+    },
+    "languages": {
+        "eng": "英语",
+        "chi_sim": "简体中文",
+        "chi_tra": "繁体中文",
+        "jpn": "日语",
+        "kor": "韩语",
+        "rus": "俄语",
+        "fra": "法语",
+        "deu": "德语",
+        "ita": "意大利语",
+        "spa": "西班牙语",
+        "por": "葡萄牙语",
+        "auto": "自动检测"
+    },
+    "preprocessing": {
+        "binarization": "二值化",
+        "deskew": "倾斜校正",
+        "noise_removal": "噪点去除",
+        "contrast_enhancement": "对比度增强",
+        "rotation": "旋转校正",
+        "border_removal": "边框去除"
+    },
+    "status": {
+        "healthy": "健康",
+        "error": "错误",
+        "processing": "处理中",
+        "completed": "已完成",
+        "queued": "队列中"
+    },
+    "logging": {
+        "startup": "OCR服务启动",
+        "shutdown": "OCR服务关闭",
+        "minio_init_error": "MinIO初始化错误: {error}",
+        "rabbitmq_init_error": "RabbitMQ连接错误: {error}",
+        "bucket_created": "创建了'pdf-ocr' bucket",
+        "rabbitmq_connected": "RabbitMQ连接已建立",
+        "file_content_error": "获取文件内容时出错: {error}",
+        "save_file_error": "保存处理后的文件时出错: {error}",
+        "process_error": "处理文档时出错: {error}",
+        "request_error": "处理OCR请求时出错: {error}",
+        "status_error": "获取操作状态时出错: {error}",
+        "download_error": "下载处理结果时出错: {error}",
+        "tesseract_info": "Tesseract版本: {version}"
+    }
+}

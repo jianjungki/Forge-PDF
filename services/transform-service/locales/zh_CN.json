@@ -1,0 +1,86 @@
+{
+    "transform": {
+        "success": "转换成功",
+        "error": "转换失败: {error}",
+        "processing": "文档处理中",
+        "queued": "已加入队列",
+        "invalid_format": "不支持的格式: {format}",
+        "conversion_timeout": "转换超时",
+        "file_too_large": "文件过大，最大支持 {max_size}"
+    },
+    "formats": {
+        "input": {
+            "doc": "Word文档",
+            "docx": "Word文档(OOXML)",
+            "ppt": "PowerPoint演示文稿",
+            "pptx": "PowerPoint演示文稿(OOXML)",
+            "xls": "Excel工作表",
+            "xlsx": "Excel工作表(OOXML)",
+            "txt": "文本文件",
+            "md": "Markdown文档",
+            "html": "HTML网页",
+            "jpg": "JPEG图片",
+            "jpeg": "JPEG图片",
+            "png": "PNG图片",
+            "gif": "GIF图片"
+        },
+        "output": {
+            "pdf": "PDF文档",
+            "doc": "Word文档",
+            "docx": "Word文档(OOXML)",
+            "txt": "文本文件",
+            "md": "Markdown文档",
+            "html": "HTML网页",
+            "jpg": "JPEG图片",
+            "png": "PNG图片"
+        }
+    },
+    "operations": {
+        "convert": "格式转换",
+        "beautify": "文档美化",
+        "apply_template": "应用模板",
+        "custom_process": "自定义处理"
+    },
+    "validation": {
+        "format_required": "请指定输出格式",
+        "invalid_format": "不支持的格式: {format}",
+        "invalid_options": "无效的选项: {option}",
+        "template_not_found": "模板不存在: {template}"
+    },
+    "options": {
+        "quality": {
+            "low": "低质量(文件小)",
+            "medium": "中等质量",
+            "high": "高质量(文件大)"
+        },
+        "beautify": {
+            "layout": "布局优化",
+            "typography": "排版优化",
+            "color": "颜色优化",
+            "spacing": "间距优化"
+        }
+    },
+    "status": {
+        "healthy": "健康",
+        "error": "错误",
+        "processing": "处理中",
+        "completed": "已完成",
+        "queued": "队列中"
+    },
+    "logging": {
+        "startup": "转换服务启动",
+        "shutdown": "转换服务关闭",
+        "minio_init_error": "MinIO初始化错误: {error}",
+        "rabbitmq_init_error": "RabbitMQ连接错误: {error}",
+        "bucket_created": "创建了'pdf-transform' bucket",
+        "rabbitmq_connected": "RabbitMQ连接已建立",
+        "file_content_error": "获取文件内容时出错: {error}",
+        "save_file_error": "保存处理后的文件时出错: {error}",
+        "process_error": "处理文档时出错: {error}",
+        "request_error": "处理转换请求时出错: {error}",
+        "status_error": "获取操作状态时出错: {error}",
+        "download_error": "下载处理结果时出错: {error}",
+        "template_error": "应用模板时出错: {error}",
+        "beautify_error": "美化文档时出错: {error}"
+    }
+}
