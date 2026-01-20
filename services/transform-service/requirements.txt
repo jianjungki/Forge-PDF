@@ -19,7 +19,7 @@ python-pptx==0.6.21
 markdown==3.5.1
 beautifulsoup4==4.12.2
 lxml==4.9.3
-weasyprint==60.1
+weasyprint==68.0
 pdfkit==1.0.0
 img2pdf==0.4.4
 python-magic==0.4.27
